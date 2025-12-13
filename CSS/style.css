@@ -1,1 +1,623 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html,body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;   /* 🔒 hard lock horizontal scroll */
+}
+
+/* ================= HEADER ================= */
+/* HEADER */
+.site-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO */
+.logo img {
+  height: 70px;
+}
+
+/* MENU GROUP (RIGHT SIDE) */
+.menu-wrap {
+  margin-left: auto;   /* 🔥 THIS replaces space-between */
+  display: flex;
+  align-items: center;
+}
+
+/* DESKTOP MENU */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.desktop-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* MENU SEPARATOR | */
+.sep {
+  color: #fff;
+  opacity: 0.6;
+  margin: 0 6px;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  margin-left: 12px;   /* 🔥 controlled, small space */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgb(182, 123, 81);
+  margin: 4px 0;
+}
+
+/* OVERLAY MENU */
+.overlay-menu {
+  position: absolute;
+  top: 100%;
+  right: 24px;
+  background: rgba(182, 123, 81, 0.9);
+  display: none;
+  flex-direction: column;
+  padding: 14px 18px;
+  border-radius: 6px;
+}
+
+.overlay-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.overlay-menu.show {
+  display: flex;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    margin-left: 0;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+}
+
+/* DROPDOWN MENU */
+.overlay-menu {
+  position: absolute;
+  top: 100%;
+  right: 24px;
+  background: rgba(182, 123, 81,0.9);
+  display: none;
+  flex-direction: column;
+  padding: 14px 18px;
+  border-radius: 6px;
+}
+
+.overlay-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.overlay-menu.show {
+  display: flex;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* VIDEO */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* OVERLAY */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: -1;
+}
+
+/* HERO TEXT */
+.hero-content {
+  max-width: 820px;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 400;
+}
+/* ================= SAFARI SECTION ================= */
+
+.safari-section {
+  margin-left:5rem;
+  margin-right:5rem;
+  padding: 50px 0 70px;
+  background: #fff;
+}
+
+.section-title {
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* GRID (INSIDE PAGE MARGIN) */
+.safari-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+.safari-card {
+  position: relative;
+  transition: transform .35s ease;
+}
+
+/* IMAGE */
+.safari-img img {
+  width: 100%;
+  height: 240px;                 /* 🔴 smaller like your design */
+  object-fit: cover;
+  border-radius: 6px;            /* slight rounded */
+  display: block;
+}
+
+/* INFO BOX (NO GAP) */
+.safari-info {
+  background: #b9835a;
+  color: #fff;
+  text-align: center;
+  padding: 14px 10px;
+  margin-top: -4px;              /* 🔥 removes visible gap */
+  border-radius: 0 0 6px 6px;
+  position: relative;
+  z-index: 2;
+}
+
+/* SLIDE SHADOW BACKGROUND */
+.safari-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: -10px;              /* only bottom shadow */
+  background: #b9835a;
+  opacity: 0.15;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+
+/* TEXT */
+.safari-info h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.safari-info a {
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+/* HOVER (KEEP YOUR BOUNCE) */
+.safari-card:hover {
+  transform: translateY(-8px);
+}
+/* ================= MAP SECTION ================= */
+
+.map-section {
+   margin-left:5rem;
+  margin-right:5rem;
+  padding: 40px 70px;           /* same logic as Safari section */
+  background: #f5f7f8;
+}
+
+/* MAP HOLDER (locks alignment & ratio) */
+.map-holder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.2 / 1;        /* IMPORTANT: keeps pin accuracy */
+  margin-top: 30px;
+}
+
+/* MAP IMAGE */
+.map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ================= MAP PIN BASE ================= */
+
+.map-pin {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #b9835a;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transform: translate(-50%, -100%);
+  z-index: 3;
+}
+
+/* INNER DOT */
+.map-pin::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+/* ================= PIN POSITIONS ================= */
+/* These values are tuned for your world-map image */
+
+/* INDIA */
+.map-pin.india {
+  top: 55%;
+  left: 62%;
+}
+
+/* KENYA */
+.map-pin.kenya {
+  top: 60%;
+  left: 52%;
+}
+
+/* AUSTRALIA (Sydney) */
+.map-pin.australia {
+  top: 74%;
+  left: 82%;
+}
+
+/* ================= POPUP ================= */
+
+.map-popup {
+  position: absolute;
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 220px;
+  display: none;
+  z-index: 5;
+}
+
+.map-popup h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.map-popup p {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .map-section {
+    padding: 50px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-section {
+    padding: 40px 20px;
+  }
+
+  .map-popup {
+    width: 200px;
+  }
+}
+
+
+/* ================= SCROLL ANIMATION ================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .safari-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .safari-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+  background: #b9835a;
+  color: #fff;
+  padding: 40px 0 0;
+  font-size: 14px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* HEADINGS */
+.site-footer h4 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* LINKS */
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.site-footer a:hover {
+  opacity: 1;
+}
+
+/* LIST */
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-footer li {
+  margin-bottom: 6px;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons .icon {
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+}
+
+.icon.fb { background: #0a3d91; }
+.icon.ig { background: #ff5cd1; }
+.icon.tw { background: #11b6f3; }
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+  text-align: center;
+  padding: 14px 10px;
+  margin-top: 30px;
+  background: rgba(0,0,0,0.15);
+  font-size: 13px;
+}
+
+/* ================= WHATSAPP FLOAT ================= */
+
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  color: #b9835a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  z-index: 999;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= PASSION SLIDER ================= */
+
+.passion-slider {
+  margin-left:5rem;
+  margin-right:5rem;
+  padding: 40px 70px;  
+  background: #fff;
+}
+
+/* SLIDER BOX (INSIDE CONTAINER) */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 10px; /* soft edge like Safari cards */
+}
+
+/* SLIDE */
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* DARK OVERLAY (READABILITY) */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+/* LEFT TEXT */
+.slide-content {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  color: #fff;
+  z-index: 2;
+}
+
+.slide-content h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* RIGHT ARROW */
+.slider-next {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .slider-container {
+    height: 340px;
+  }
+
+  .slide-content {
+    left: 20px;
+    bottom: 25px;
+  }
+
+  .slider-next {
+    right: 15px;
+  }
+}
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  /* hide video on mobile */
+  .hero-video {
+    display: none;
+  }
+
+  .hero {
+    background: url("images/hero-poster.jpg") center/cover no-repeat;
+  }
+}
