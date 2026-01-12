@@ -622,23 +622,43 @@ html,body {
   }
 }
 /* ================= Home Our Vision SECTION ================= */
-
 .vison-section {
-  margin-left:5rem;
-  margin-right:5rem;
-  padding: 45px 0 45px;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  padding: 80px 0 80px;   /* 🔥 TOP & BOTTOM GAP */
   background: #fff;
+  text-align: justify;
 }
-.vison-title {
-  font-size: 16px;
-  letter-spacing: 2px;
-  margin-bottom: 30px;
-  font-weight: 600;
+
+.vision-container {
+  max-width: 1200px;
+  margin: auto;
 }
-.vison-p
-{
-text-align: justify; 
-color:#7d7d7d;
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.vision-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .vision-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .vision-image img {
+    height: 260px;
+  }
 }
 
 /* ================= End Our Vsion ================= */
