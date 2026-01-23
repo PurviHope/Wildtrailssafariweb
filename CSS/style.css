@@ -17,7 +17,7 @@ html,body {
   top: 0;
   width: 100%;
   z-index: 1000;
-}
+  }
 
 .header-inner {
   max-width: 1200px;
@@ -47,7 +47,7 @@ html,body {
 }
 
 .desktop-nav a {
-  color: #fff;
+  color:rgb(182, 123, 81);
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -72,7 +72,7 @@ html,body {
   display: block;
   width: 22px;
   height: 2px;
-  background: rgb(182, 123, 81);
+  background: rgb(240, 204, 179);
   margin: 4px 0;
 }
 
@@ -193,7 +193,12 @@ html,body {
   padding: 50px 0 70px;
   background: #fff;
 }
-
+.safari-sectionp {
+  margin-left:5rem;
+  margin-right:5rem;
+  padding: 110px 0 70px;
+  background: #fff;
+}
 .section-title {
   font-size: 16px;
   letter-spacing: 2px;
@@ -419,7 +424,8 @@ html,body {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  padding: 0 0 40px 40px;
+  gap: 10px;
 }
 
 /* HEADINGS */
@@ -469,7 +475,7 @@ html,body {
 /* FOOTER BOTTOM */
 .footer-bottom {
   text-align: center;
-  padding: 14px 10px;
+  padding: 14px 0;
   margin-top: 30px;
   background: rgba(0,0,0,0.15);
   font-size: 13px;
@@ -718,7 +724,9 @@ html,body {
 
 /* TEXT */
 .safari-text {
-  max-width: 520px;
+  max-width: 150rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .safari-text h2 {
@@ -732,10 +740,17 @@ html,body {
   line-height: 1.7;
   color: #444;
   margin-bottom: 22px;
+   
 }
-
 .safari-text a {
   font-size: 14px;
   color: #b9835a;
   text-decoration: none;
+}
+.breadcrum
+{
+   font-size: 14px;
+  color: #444;
+  text-decoration: none;
+  margin-bottom: 0.5em;
 }
