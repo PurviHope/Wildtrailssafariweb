@@ -1,0 +1,79 @@
+body {
+  background-color: #fff;
+}
+
+.networks {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.netbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 30px 50px;
+  background-color: #EF5350;
+}
+
+/* Yellow top line */
+.netbox::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FFE082;
+}
+
+/* Label */
+.netbox::after {
+  /*content: "Find me on my networks!";*/
+  position: absolute;
+  top: -26px;
+  left: 20px;
+  font-size: 14px;
+  padding: 0 10px;
+  background-color: #EF5350;
+  color: #333;
+}
+
+/* Icons */
+.netbox .icon {
+  position: relative;
+  font-size: 36px;
+  color: #333;
+  margin: 0 22px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.netbox .icon:hover {
+  color: #FFE082;
+}
+
+/* Tooltip */
+.netbox .icon::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 70px;
+  right: 50%;
+  transform: translateX(50%) translateY(10px);
+  background-color: #FFE082;
+  color: #EF5350;
+  font-size: 15px;
+  padding: 18px 22px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.netbox .icon:hover::after {
+  opacity: 1;
+  transform: translateX(50%) translateY(0);
+}
